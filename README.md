@@ -1,0 +1,1 @@
+A sign up form page for a fake travel newsletter site.
