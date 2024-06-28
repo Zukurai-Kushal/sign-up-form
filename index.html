@@ -8,6 +8,56 @@
     <script src="./javascript.js" defer></script>
 </head>
 <body>
-    
+    <div class="full-container">
+        <div class="banner-container">
+            <div class="logo-container">
+                <img src="./media/odin-lined.png" alt="Company Logo" width="80px">
+                <h1>ODIN TRAVELS</h1>
+            </div>
+            <img src="./media/roadtrip.jpg" alt="Road trip drive">
+            <div class="photo-credit">Photo by <a href="https://unsplash.com/photos/a-person-is-taking-a-picture-of-mountains-in-a-car-mirror-9fVWHoCV3YM">Sander Traa</a></div>
+        </div>
+        <div class="info-container">
+            <div>
+                <p>Planning a weekend road trip or a summer getaway? Plan ahead with Odin Travels, your one stop guide to any place at any time! Sign up now for a hassle free journey.</p>
+            </div>
+            <div>
+                <p>A trip even the <em>gods</em> would envy.</p>
+            </div>
+            <div id="sign-up-form-container">
+                <h1>Sign Up!</h1>
+                <form class="sign-up-form" id="sign-up-form">
+                    <div class="form-first-name">
+                        <input type="text" id="first-name" name="first_name" placeholder="FIRST NAME *" pattern="^[^0-9]+$" maxlength="30" required>
+                        <label for="first-name" data-help="Numbers not allowed">FIRST NAME</label>
+                    </div>
+                    <div class="form-last-name">
+                        <input type="text" id="last-name" name="last_name" placeholder="LAST NAME" pattern="^[^0-9]+$" maxlength="30">
+                        <label for="last-name" data-help="Numbers not allowed">LAST NAME</label>
+                    </div>
+                    <div class="form-email">
+                        <input type="email" name="email" id="email" placeholder="EMAIL *" maxlength="100" required>
+                        <label for="email" data-help="Format: godOfThunder@olympus.com">EMAIL</label>
+                    </div>
+                    <div class="form-number">
+                        <input type="tel" name="number" id="number" pattern="[0-9]{8}" placeholder="PHONE NUMBER" maxlength="20">
+                        <label for="number" data-help="Format: 98464587">PHONE NUMBER</label>
+                    </div>
+                    <div class="form-password">
+                        <input type="password" name="password" id="password" minlength="8" maxlength="30" placeholder="PASSWORD *" required>
+                        <label for="password" data-help="Minimum 8 characters">PASSWORD</label>
+                    </div>
+                    <div class="form-confirm-password">
+                        <input type="password" name="confirm_password" id="confirm-password" minlength="8" maxlength="30" placeholder="CONFIRM PASSWORD *" required>
+                        <label for="confirm-password" data-help="Passwords do not match">CONFIRM PASSWORD</label>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <button class="submit-button" type="submit" form="sign-up-form">Create Account</button>
+            </div>
+            <div class="info-footer">Already have an account? <a href="https://www.topsnowtravel.com/the-ultimate-guide-to-chamonix/">Log in</a></div>
+        </div>
+    </div>
 </body>
 </html>

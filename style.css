@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
+:root {
+  --off-white: rgb(245, 245, 245);
+  --my-dark-grey: #505050;
+  --my-light-grey: #d8d8d8;
+  --my-invalid-border: orangered;
+  --my-invalid-background: rgba(240, 128, 128, 0.26);
+  --my-valid-border: yellowgreen;
+  --my-valid-background:rgba(126, 252, 0, 0.205);
+}
+
+/* Resets */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+    4.1 Fallback fonts
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+/*Site Specific CSS*/
+html{
+  font-size: clamp(1rem, 0.75rem + 1.5vw , 2rem);
+  background-color: var(--off-white);
+}
+
+.full-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.banner-container{
+    height: 100%;
+    position: relative;
+    flex: 0 0.2 auto
+}
+
+@media only screen and (max-width: 800px) {
+  .banner-container {
+    display: none;
+  }
+}
+
+.banner-container > img{
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo-container{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  gap: 10px;
+  width: 100%;
+  bottom: 5%;
+
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: "Rammetto One", sans-serif;
+  font-size: 20px;
+}
+
+.photo-credit{
+position: absolute;
+width: 100%;
+text-align: center;
+/* border: 2px solid red; */
+bottom: 0%;
+
+color: white;
+font-size: 12px;
+
+& a:visited {
+  color: white;
+}
+
+& a:hover {
+  color: darkorange;
+}
+
+}
+
+p{
+max-inline-size: 66ch;
+font-weight: bold;
+font-size: 0.8rem;
+}
+
+.info-container{
+  flex: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px 0;
+
+  & button{
+    background-color:darkorange;
+    border: none;
+    border-radius: 15px;
+    padding: 13px 50px;
+    font-size: 0.7rem;
+    color: white;
+    font-weight: bold;
+    box-shadow: rgba(100, 100, 111, 0.15) 0px 7px 29px 0px;
+    transition-duration: 0.1s;
+  }
+
+  & button:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color:rgb(240, 120, 0);
+  }
+
+  > div{
+    padding: 0 50px;
+  }
+
+}
+
+.info-footer{
+  font-size: 0.6rem;
+
+  & a{
+    color: darkorange;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  & a:hover {
+    text-decoration: underline;
+  }
+}
+
+#sign-up-form-container{
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 10px 15px;
+  padding: 25px 50px;
+
+  & h1{
+    font-size: 0.9rem;
+    color: var(--my-dark-grey);
+  }
+}
+
+.sign-up-form{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.sign-up-form > div{
+  position: relative;
+}
+
+.sign-up-form input{
+  border: 3px solid var(--my-light-grey);
+  border-radius: 6px;
+  font-size: 0.7rem;
+  padding: 30px 10px 10px;
+  width: 16rem;
+  transition: all 0.2s ease-in-out;
+  color: black;
+}
+
+@keyframes silo-fade {
+  0% {
+      opacity: 0;
+      transform: translateY(-1.4em);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes silo-help {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 0;
+  }
+  80% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.sign-up-form label{
+  display: none;
+  position: absolute;
+  padding: 10px 13px;
+  left: 0;
+  font-size: 0.5rem;
+  color: var(--my-dark-grey);
+  font-weight: bold;
+  animation: silo-fade 0.2s;
+}
+
+.sign-up-form input:focus + label,
+.sign-up-form input:not(:placeholder-shown) + label{
+  display: inline;
+}
+
+.sign-up-form input:focus:invalid,
+.sign-up-form input:not(:placeholder-shown):invalid{
+  border-color:var(--my-invalid-border);
+  background-color: var(--my-invalid-background);
+}
+
+.sign-up-form input:focus:invalid + label:after{
+  content: " ("attr(data-help)") ";
+  animation: silo-help 5s;
+}
+
+.sign-up-form input:invalid + label:after{
+  content: " ("attr(data-help)") ";
+}
+
+.sign-up-form input:invalid + label{
+  color: var(--my-invalid-border);
+}
+
+.sign-up-form input:valid + label{
+  color: var(--my-valid-border);
+}
+
+.sign-up-form input:focus::placeholder{
+  color: transparent;
+}
+
+.sign-up-form input::placeholder{
+  color: var(--my-light-grey);
+}
+
+.sign-up-form input:focus:valid,
+.sign-up-form input:not(:placeholder-shown):valid{
+  border-color:var(--my-valid-border);
+  background-color:var(--my-valid-background);
+}
+
+.sign-up-form input:focus {
+  outline: 0;
+  background-color: white !important;
+}
+
+
