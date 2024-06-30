@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
 :root {
-  --off-white: rgb(245, 245, 245);
-  --my-dark-grey: #505050;
-  --my-light-grey: #d8d8d8;
-  --my-invalid-border: orangered;
-  --my-invalid-background: rgba(240, 128, 128, 0.26);
-  --my-valid-border: yellowgreen;
-  --my-valid-background:rgba(126, 252, 0, 0.205);
+  --color-background: rgb(245, 245, 245);
+  --color-heading: #505050;
+  --color-form-ui: #d8d8d8;
+  --color-invalid: orangered;
+  --color-invalid-light: rgba(240, 128, 128, 0.26);
+  --color-valid: yellowgreen;
+  --color-valid-light:rgba(126, 252, 0, 0.205);
 }
 
 /* Resets */
@@ -62,7 +62,7 @@
 /*Site Specific CSS*/
 html{
   font-size: clamp(1rem, 0.75rem + 1.5vw , 2rem);
-  background-color: var(--off-white);
+  background-color: var(--color-background);
 }
 
 .full-container{
@@ -81,6 +81,7 @@ html{
   .banner-container {
     display: none;
   }
+  
 }
 
 .banner-container > img{
@@ -183,7 +184,7 @@ font-size: 0.8rem;
 
   & h1{
     font-size: 0.9rem;
-    color: var(--my-dark-grey);
+    color: var(--color-heading);
   }
 }
 
@@ -199,7 +200,7 @@ font-size: 0.8rem;
 }
 
 .sign-up-form input{
-  border: 3px solid var(--my-light-grey);
+  border: 3px solid var(--color-form-ui);
   border-radius: 6px;
   font-size: 0.7rem;
   padding: 30px 10px 10px;
@@ -240,7 +241,7 @@ font-size: 0.8rem;
   padding: 10px 13px;
   left: 0;
   font-size: 0.5rem;
-  color: var(--my-dark-grey);
+  color: var(--color-heading);
   font-weight: bold;
   animation: silo-fade 0.2s;
 }
@@ -252,8 +253,8 @@ font-size: 0.8rem;
 
 .sign-up-form input:focus:invalid,
 .sign-up-form input:not(:placeholder-shown):invalid{
-  border-color:var(--my-invalid-border);
-  background-color: var(--my-invalid-background);
+  border-color:var(--color-invalid);
+  background-color: var(--color-invalid-light);
 }
 
 .sign-up-form input:focus:invalid + label:after{
@@ -266,11 +267,11 @@ font-size: 0.8rem;
 }
 
 .sign-up-form input:invalid + label{
-  color: var(--my-invalid-border);
+  color: var(--color-invalid);
 }
 
 .sign-up-form input:valid + label{
-  color: var(--my-valid-border);
+  color: var(--color-valid);
 }
 
 .sign-up-form input:focus::placeholder{
@@ -278,13 +279,13 @@ font-size: 0.8rem;
 }
 
 .sign-up-form input::placeholder{
-  color: var(--my-light-grey);
+  color: var(--color-form-ui);
 }
 
 .sign-up-form input:focus:valid,
 .sign-up-form input:not(:placeholder-shown):valid{
-  border-color:var(--my-valid-border);
-  background-color:var(--my-valid-background);
+  border-color:var(--color-valid);
+  background-color:var(--color-valid-light);
 }
 
 .sign-up-form input:focus {
