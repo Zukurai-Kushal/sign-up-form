@@ -1,3 +1,5 @@
+/* Future Reference: https://dustunderbag.github.io/Sign-up-Form/ */
+
 @import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
 :root {
   --color-background: rgb(245, 245, 245);
@@ -116,7 +118,7 @@ bottom: 0%;
 color: white;
 font-size: 12px;
 
-& a:visited {
+& a{
   color: white;
 }
 
